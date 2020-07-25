@@ -1,0 +1,6 @@
+---
+# tasks file for EPEL
+
+- name: Use Red Hat tasks
+  include_tasks: redhat.yml
+  when: ansible_facts['os_family'] == "RedHat"
