@@ -1,0 +1,16 @@
+---
+# tasks file for HashiCorp - RHEL
+- name: Setup for YUM repository
+  block:
+    - name: Install required yum software
+      yum:
+        name: yum-utils
+        state: latest
+
+    - name: Install HashiCorp yum repository
+      yum_repository:
+        name: hashicorp
+        description: HashiCorp YUM repo
+        baseurl: "{{ hashicorp_repo }}"
+
+  become: true

@@ -1,0 +1,7 @@
+---
+- name: Converge
+  hosts: all
+  tasks:
+    - name: "Include HashiCorp"
+      include_role:
+        name: "HashiCorp"
