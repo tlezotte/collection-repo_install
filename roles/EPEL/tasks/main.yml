@@ -1,6 +1,43 @@
 ---
 # tasks file for EPEL
+- name: Install EPEL YUM repository
+  yum:
+    name: https://dl.fedoraproject.org/pub/epel/epel-release-latest-{{ ansible_facts['distribution_major_version'] }}.noarch.rpm
+    state: latest
+  become: true
+  when: ansible_facts['os_family'] == "RedHat" 
 
-- name: Use Red Hat tasks
-  include_tasks: redhat.yml
-  when: ansible_facts['os_family'] == "RedHat"
+
+- name: Enable EPEL PowerTools
+  command: yum config-manager --set-enabled PowerTools
+  become: true
+  when: 
+    - ansible_facts['distribution'] == "CentOS" 
+    - ansible_facts['distribution_major_version'] == "8"
+  tags:
+    - never
+    - extras
+    - powertools
+
+
+- name: Enable EPEL Codeready Builder
+  command: subscription-manager repos --enable "rhel-*-optional-rpms" --enable "rhel-*-extras-rpms" --enable "rhel-ha-for-rhel-*-server-rpms"
+  become: true
+  when: 
+    - ansible_facts['distribution'] == "RedHat"
+    - ansible_facts['distribution_major_version'] == "7"
+  tags:
+    - never
+    - extras
+    - codeready
+
+- name: Enable EPEL Codeready Builder
+  command: subscription-manager repos --enable "codeready-builder-for-rhel-8-{{ ansible_facts['architecture'] }}-rpms"
+  become: true
+  when: 
+    - ansible_facts['distribution'] == "RedHat"
+    - ansible_facts['distribution_major_version'] == "8"
+  tags:
+    - never
+    - extras
+    - codeready

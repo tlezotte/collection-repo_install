@@ -7,7 +7,7 @@
         name: yum-utils
         state: latest
 
-    - name: Install HashiCorp yum repository
+    - name: Install HashiCorp YUM repository
       yum_repository:
         name: hashicorp
         description: HashiCorp YUM repo
