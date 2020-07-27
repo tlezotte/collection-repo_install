@@ -1,3 +1,7 @@
-# Ansible Collection - tlezotte.repo_install
+# Ansible Collection - [repo]sitory install
 
-Documentation for the collection.
+🏠 [Homepage](https://tlezotte.github.io/tlezotte-collection-repo_install/)
+
+📖 [Documentation](https://tlezotte.github.io/tlezotte-collection-repo_install/)
+
+☄ [Galaxy Homepage]()
