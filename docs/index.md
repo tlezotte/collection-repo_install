@@ -1,14 +1,16 @@
+# [Repo]sitory Install
+
 ## [CentOS](centos.md)
 
-## Elastic
+## [Elastic](elastic.md)
 
-## EPEL
+## [EPEL](epel.md)
 
-## HashiCopr
+## [HashiCorp](hashicorp.md)
 
-## MariaDB
+## [MariaDB](mariadb.md)
 
-## Microsoft
+## [Microsoft](microsoft.md)
 
-## Oracle
+## [Oracle](oracle.md)
 
