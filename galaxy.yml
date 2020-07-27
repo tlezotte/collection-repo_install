@@ -48,10 +48,10 @@ dependencies: {}
 repository: https://github.com/tlezotte/collection-repo_install
 
 # The URL to any online docs
-documentation: https://github.com/tlezotte/collection-repo_install/tree/master/docs
+documentation: https://tlezotte.github.io/tlezotte-collection-repo_install
 
 # The URL to the homepage of the collection/project
-homepage: https://tlezotte.github.io/collection-repo_install
+homepage: https://tlezotte.github.io/tlezotte-collection-repo_install
 
 # The URL to the collection issue tracker
 issues: https://github.com/tlezotte/collection-repo_install/issues

@@ -1,6 +1,6 @@
 # Repositories to Install
 
-## [[CentOS]]
+## [CentOS](centos.md)
 
 ## Elastic
 
