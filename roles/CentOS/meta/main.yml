@@ -1,1 +1,3 @@
-dependencies: ["EPEL"]
+---
+dependencies: 
+    - { role: 'EPEL', when: ansible_os_family == 'RedHat' }

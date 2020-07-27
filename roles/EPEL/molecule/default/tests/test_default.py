@@ -8,12 +8,15 @@ testinfra_hosts = testinfra.utils.ansible_runner.AnsibleRunner(
 
 
 def test_epel_repo_dir(host):
-    f = host.file("/etc/yum.repos.d/epel.repo")
+    sysinfo = host.system_info
 
-    assert f.exists
-    assert f.user == "root"
-    assert f.group == "root"
-    assert f.mode == 0o644
+    if sysinfo.distribution == "redhat" or sysinfo.distribution == "centos":
+        f = host.file("/etc/yum.repos.d/epel.repo")
+
+        assert f.exists
+        assert f.user == "root"
+        assert f.group == "root"
+        assert f.mode == 0o644
 
 
 def test_powertools_repo_dir(host):

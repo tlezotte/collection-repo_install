@@ -1,3 +1,12 @@
 ---
 # tasks file for CentOS
-#https://wiki.centos.org/AdditionalResources/Repositories
+- name: Install CentOS SCL YUM repository
+  yum:
+    name: centos-release-scl
+    state: latest
+  become: true
+  when:
+    - ansible_facts['distribution'] == "CentOS"
+    - ansible_facts['distribution_major_version'] == "7"
+  tags:
+    - scl
